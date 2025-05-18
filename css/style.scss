@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$field-width: 100%;
+$field-height: 28px;
+
+@mixin widthHeight($w: 300px, $h: 200px) {
+  width: $w;
+  height: $h;
+}
+
+@mixin field-values($marginTop: 5px) {
+  @include widthHeight($field-width, $field-height);
+  margin-top: $marginTop;
+}
+
+.container {
+  height: 600px;
+  position: relative;
+
+  .login {
+    @include widthHeight();
+    background-color: aliceblue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    padding: 20px;
+
+    .field {
+      margin-top: 10px;
+
+      label {
+        font-size: 30px;
+      }
+
+      input {
+        @include field-values();
+      }
+    }
+
+    button {
+      @include field-values(25px);
+    }
+  }
+}
+
+.popup {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: azure;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+// Mobile
+@media screen and (min-width: 360px) {
+  .container {
+    .login {
+      background-color: #00FFFF;
+
+      .field {
+        label {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+
+// Tablet
+@media screen and (min-width: 800px) {
+  .container {
+    .login {
+      background-color: blue;
+
+      .field {
+        label {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
+
+// Desktop
+@media screen and (min-width: 1000px) {
+  .container {
+    .login {
+      background-color: aliceblue;
+
+      .field {
+        label {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}
