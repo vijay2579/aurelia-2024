@@ -22,7 +22,7 @@ $field-height: 28px;
 
   .login {
     @include widthHeight();
-    background-color: aliceblue;
+    background-color: #483D8B;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -94,7 +94,7 @@ $field-height: 28px;
 @media screen and (min-width: 1000px) {
   .container {
     .login {
-      background-color: aliceblue;
+      background-color: grey;
 
       .field {
         label {
